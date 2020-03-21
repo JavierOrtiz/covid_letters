@@ -12,9 +12,6 @@ class LettersController < ApplicationController
     @letter = Letter.new
   end
 
-  def edit
-  end
-
   def create
     @letter = Letter.new(letter_params)
 
@@ -26,26 +23,6 @@ class LettersController < ApplicationController
         format.html { render :new }
         format.json { render json: @letter.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @letter.update(letter_params)
-        format.html { redirect_to @letter, notice: 'Letter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @letter }
-      else
-        format.html { render :edit }
-        format.json { render json: @letter.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @letter.destroy
-    respond_to do |format|
-      format.html { redirect_to letters_url, notice: 'Letter was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
