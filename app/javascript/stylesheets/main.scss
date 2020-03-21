@@ -1,0 +1,186 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.84);
+  font-family: 'Hind Madurai', sans-serif;
+
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+select {
+  appearance: none;
+}
+
+/* HEADER */
+.o-header {
+  overflow: hidden;
+  padding: 8px 16px;
+}
+
+.o-header .a-sort {
+  appearance: none;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight:bold;
+  line-height: 3;
+} 
+
+.o-header .a-search-input {
+  display: inline-block;
+  vertical-align: middle;
+  appearance: none;
+  padding: 8px;
+  font-size: 14px;
+  float: right;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*MAIN WRAPPER*/
+
+.o-wrapper {
+  max-width: 320px;
+  margin: 0 auto 32px;
+  padding: 8px 0;
+}
+
+/*CARDS*/
+
+.o-cards-list__item {
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+.o-cards-list__item + .o-cards-list__item {
+  margin-top: 32px;
+}
+
+.o-cards-list__head * {
+  margin: 0; 
+}
+  
+.o-cards-list__head--title  {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold; 
+}
+  
+.o-cards-list__head--name  {
+  opacity: 0.7;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.o-cards-list__head--nam span + span {
+  font-weight: bold;
+}
+
+.o-cards-list__head--date  {
+  opacity: 0.7;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.o-cards-list__body {
+  margin-top: 16px;
+  line-height: 1.2;
+}
+
+/* LINK */
+
+.-link {
+  display: block;
+  margin: 24px auto 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0000FF;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.-link:hover  {
+  text-decoration: none;
+}
+
+/* COLLAPSED*/
+
+.-collapsed .o-cards-list__body  {
+  position: relative;
+  max-height: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.-collapsed .o-cards-list__body :before  {
+  position: absolute;
+  content:"";
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,1));
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 820px) {
+  .o-wrapper {
+    max-width: 820px;
+  }
+  
+  .o-cards-list__item {
+    padding: 32px;
+   }
+}

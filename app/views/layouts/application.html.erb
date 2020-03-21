@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CovidCards</title>
+    <title>Cartas contra el Covid</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <header class="o-header">
+      <select class="a-sort" value="Ordenar por">
+        <option>Ordenar por:</option>
+        <option>Más reciente primero</option>
+        <option>Más antiguo primero</option>
+      </select>
+      <input class="a-search-input" type="text" name="Busca por palabras">
+    </header>
     <%= yield %>
   </body>
 </html>
