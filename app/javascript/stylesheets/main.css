@@ -150,6 +150,18 @@ label {
   font-size: 12px;
   font-weight:bold;
   line-height: 3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.o-header .a-sort-text {
+  appearance: none;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight:bold;
+  line-height: 3;
+  padding: 0px !important;
 }
 
 .o-header .a-search-input {

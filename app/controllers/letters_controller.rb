@@ -1,8 +1,12 @@
 class LettersController < ApplicationController
-  before_action :set_letter, only: [:show, :edit, :update, :destroy]
+  before_action :set_letter, only: :show
 
   def index
-    @letters = Letter.all.order(created_at: :desc)
+    if params[:query].present?
+      @letters = Letter.search(params[:query]).order(created_at:sort_method)
+    else
+      @letters = Letter.all.order(created_at: sort_method)
+    end
   end
 
   def show
@@ -33,5 +37,11 @@ class LettersController < ApplicationController
 
     def letter_params
       params.require(:letter).permit(:title, :author_name, :author_city, :body)
+    end
+
+    def sort_method
+      return :desc if params.dig(:order).blank?
+
+      params.fetch(:order)
     end
 end

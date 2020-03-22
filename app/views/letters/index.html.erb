@@ -3,12 +3,14 @@
 </header>
 <main id="main" class="o-wrapper">
   <nav class="o-header">
-    <select class="a-sort" value="Ordenar por">
-      <option>Ordenar por:</option>
-      <option>Más reciente primero</option>
-      <option>Más antiguo primero</option>
-    </select>
-    <input class="a-search-input" type="text" value="Busca por palabras">
+    <%= form_tag root_path, method: :get, id: "searchForm" do %>
+      <%= label_tag :order, "Ordenar por: ", class: "a-sort-text" %>
+      <%= select_tag :order, options_for_select([["Más reciente primero", "asc"], ["Más antiguo primero", "desc"]], params.dig(:order)), include_blank: true, class: "a-sort", onchange: 'reload_filters()' %>
+
+
+      <%= text_field_tag :query, params.dig(:query), class: "a-search-input", placeholder: "Busca por palabras" %>
+    <% end %>
+
   </nav>
   <!--LETTERS LIST-->
   <ol class="o-cards-list">
@@ -30,3 +32,10 @@
     <% end %>
   </ol>
 </main>
+
+<script>
+  function reload_filters() {
+      form = document.getElementById("searchForm");
+      form.submit();
+  }
+</script>
