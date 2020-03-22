@@ -1,8 +1,12 @@
 class LettersController < ApplicationController
-  before_action :set_letter, only: [:show, :edit, :update, :destroy]
+  before_action :set_letter, only: :show
 
   def index
-    @letters = Letter.all.order(created_at: :desc)
+    if params[:query].present?
+      @letters = Letter.search(params[:query]).order(created_at: :desc)
+    else
+      @letters = Letter.all.order(created_at: :desc)
+    end
   end
 
   def show

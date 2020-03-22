@@ -3,14 +3,14 @@
 </header>
 <main id="main" class="o-wrapper">
   <nav class="o-header">
-    <%= form_with url: root_path do |f| %>
+    <%= form_tag root_path, method: :get do |f| %>
       <select class="a-sort" value="Ordenar por">
         <option>Ordenar por:</option>
         <option>Más reciente primero</option>
         <option>Más antiguo primero</option>
       </select>
 
-      <%= f.text_field :query, class: "a-search-input", placeholder: "Busca por palabras" %>
+      <%= text_field_tag :query, params.dig(:q), class: "a-search-input", placeholder: "Busca por palabras" %>
     <% end %>
 
   </nav>
