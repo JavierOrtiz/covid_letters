@@ -3,9 +3,9 @@ class LettersController < ApplicationController
 
   def index
     if params[:query].present?
-      @letters = Letter.search(params[:query]).order(created_at: :desc)
+      @letters = Letter.search(params[:query]).order(created_at:sort_method)
     else
-      @letters = Letter.all.order(created_at: :desc)
+      @letters = Letter.all.order(created_at: sort_method)
     end
   end
 
@@ -37,5 +37,11 @@ class LettersController < ApplicationController
 
     def letter_params
       params.require(:letter).permit(:title, :author_name, :author_city, :body)
+    end
+
+    def sort_method
+      return :desc if params.dig(:order).blank?
+
+      params.fetch(:order)
     end
 end
