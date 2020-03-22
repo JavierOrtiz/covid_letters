@@ -2,15 +2,18 @@
   <%= link_to "Escribe algo bonito", new_letter_path, class: "a-card-cta" %>
 </header>
 <main id="main" class="o-wrapper">
-  <nav class="o-header">
+  <nav class="o-header m-options-bar">
     <%= form_tag root_path, method: :get, id: "searchForm" do %>
-      <%= label_tag :order, "Ordenar por: ", class: "a-sort-text" %>
-      <%= select_tag :order, options_for_select([["Más reciente primero", "desc"], ["Más antiguo primero", "asc"]], params.dig(:order)), include_blank: true, class: "a-sort", onchange: 'reload_filters()' %>
-
-
-      <%= text_field_tag :query, params.dig(:query), class: "a-search-input", placeholder: "Busca por palabras" %>
+      <div class="m-options-bar__half">
+        <%= select_tag :order, options_for_select([["Más reciente primero", "desc"], ["Más antiguo primero", "asc"]], params.dig(:order)), include_blank: "Ordenar por:", class: "a-sort", onchange: 'reload_filters()' %>
+      </div>
+      <div class="m-options-bar__half">
+        <div class="m-search-box">
+          <%= image_tag "ic-magnifying-glass.png", class: "m-search-box__icon" %>
+          <%= text_field_tag :query, params.dig(:query), class: "a-search-input", placeholder: "Busca por palabras" %>
+        </div>
+      </div>
     <% end %>
-
   </nav>
   <!--LETTERS LIST-->
   <ol class="o-cards-list">
