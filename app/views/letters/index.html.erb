@@ -1,4 +1,16 @@
+<header class="m-toolbar">
+  <a class="a-card-cta">Escribe algo bonito</a>
+</header>
 <main id="main" class="o-wrapper">
+  <nav class="o-header">
+    <select class="a-sort" value="Ordenar por">
+      <option>Ordenar por:</option>
+      <option>Más reciente primero</option>
+      <option>Más antiguo primero</option>
+    </select>
+    <input class="a-search-input" type="text" value="Busca por palabras">
+  </nav>
+  <!--LETTERS LIST-->
   <ol class="o-cards-list">
     <% @letters.each do |letter| %>
       <li class="o-cards-list__item -collapsed">

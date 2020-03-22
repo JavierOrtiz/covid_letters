@@ -1,23 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @letter.title %>
-</p>
-
-<p>
-  <strong>Author name:</strong>
-  <%= @letter.author_name %>
-</p>
-
-<p>
-  <strong>Author city:</strong>
-  <%= @letter.author_city %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @letter.body %>
-</p>
-
-<%= link_to 'Back', letters_path %>
+<div class="o-cards-list -full -form-wrapper">
+  <%= link_to 'Volver', letters_path, class: "-back-link" %>
+  <div class="o-cards-list__head">
+    <p class="o-cards-list__head--title"><%= @letter.title %></p>
+    <p class="o-cards-list__head--name">
+      <span> Por </span>
+      <span> <%= @letter.author_name %> </span>
+    </p>
+    <p class="o-cards-list__head--date"> Publicado hace <%= time_ago_in_words(@letter.created_at, {locale: :es}) %></p>
+  </div>
+  <div class="o-cards-list__body -regular-text">
+    <p> <%= @letter.body %></p>
+  </div>
+  <%= link_to 'Atras', letters_path, class: "-link" %>
+</div>
