@@ -3,12 +3,16 @@
 </header>
 <main id="main" class="o-wrapper">
   <nav class="o-header">
-    <select class="a-sort" value="Ordenar por">
-      <option>Ordenar por:</option>
-      <option>Más reciente primero</option>
-      <option>Más antiguo primero</option>
-    </select>
-    <input class="a-search-input" type="text" value="Busca por palabras">
+    <%= form_with url: root_path do |f| %>
+      <select class="a-sort" value="Ordenar por">
+        <option>Ordenar por:</option>
+        <option>Más reciente primero</option>
+        <option>Más antiguo primero</option>
+      </select>
+
+      <%= f.text_field :query, class: "a-search-input", placeholder: "Busca por palabras" %>
+    <% end %>
+
   </nav>
   <!--LETTERS LIST-->
   <ol class="o-cards-list">
