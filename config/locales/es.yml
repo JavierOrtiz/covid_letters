@@ -3,8 +3,10 @@ es:
   datetime:
      distance_in_words:
        about_x_hours: 'hace %{count} horas'
+       about_x_days: 'hace %{count} días'
        x_minutes: '%{count} minutos'
        short:
          about_x_hours:
            one: 'una hora'
            other: '%{count} horas'
+       less_than_x_minutes: 'menos de %{count} minutos'
