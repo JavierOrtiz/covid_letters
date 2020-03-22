@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Letters</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author name</th>
-      <th>Author city</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<header class="m-toolbar">
+  <%= link_to "Escribe algo bonito", new_letter_path, class: "a-card-cta" %>
+</header>
+<main id="main" class="o-wrapper">
+  <nav class="o-header">
+    <select class="a-sort" value="Ordenar por">
+      <option>Ordenar por:</option>
+      <option>Más reciente primero</option>
+      <option>Más antiguo primero</option>
+    </select>
+    <input class="a-search-input" type="text" value="Busca por palabras">
+  </nav>
+  <!--LETTERS LIST-->
+  <ol class="o-cards-list">
     <% @letters.each do |letter| %>
-      <tr>
-        <td><%= letter.title %></td>
-        <td><%= letter.author_name %></td>
-        <td><%= letter.author_city %></td>
-        <td><%= letter.body %></td>
-        <td><%= link_to 'Show', letter %></td>
-      </tr>
+      <li class="o-cards-list__item -collapsed">
+        <div class="o-cards-list__head">
+          <p class="o-cards-list__head--title"><%= letter.title %></p>
+          <p class="o-cards-list__head--name">
+            <span> Por </span>
+            <span><%= letter.author_name %></span>
+          </p>
+          <p class="o-cards-list__head--date">Publicado hace <%= time_ago_in_words(letter.created_at, {locale: :es}) %></p>
+        </div>
+        <div class="o-cards-list__body">
+          <p><%= letter.body.truncate(200) %></p>
+        </div>
+        <%= link_to 'Continúa', letter, class: "-link" %>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Letter', new_letter_path %>
+  </ol>
+</main>
