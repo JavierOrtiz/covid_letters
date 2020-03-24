@@ -20,7 +20,7 @@ class LettersController < ApplicationController
     @letter = Letter.new(letter_params)
 
     respond_to do |format|
-      if @letter.save
+      if verify_recaptcha(model: @letter) && @letter.save
         format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
         format.json { render :show, status: :created, location: @letter }
       else

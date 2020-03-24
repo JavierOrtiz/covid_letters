@@ -27,6 +27,7 @@
 
     <label>Escribe tu mensaje. No hay límte de texto.</label>
     <%= form.text_area :body, class: "form-input", placeholder: "Recuerda que tu mensaje, por pequeño que sea, puede ayudar a mucha gente :)", rows: "15" %>
+    <%= recaptcha_tags %>
   </fieldset>
   <div class="m-options-bar">
     <div class="m-options-bar__half">
