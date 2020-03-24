@@ -1,6 +1,6 @@
 <header class="m-toolbar m-options-bar">
   <div class="m-options-bar__half">
-    <h1 class="-logo">HéroesDelBarrio</h1>
+    <h1 class="-logo">GraciasPor</h1>
   </div>
   <div class="m-options-bar__half" style="overflow: visible;">
     <div id="submenu-list" class="-submenu -mobile">
@@ -16,8 +16,8 @@
       </ol>
     </div>
     <div class="-desktop">
-      <a class="-link" style="display:inline-block;margin:0 32px 0 0;padding:8px;vertical-align: middle;">Ayuda</a>
-      <%= link_to "Escribe algo bonito", new_letter_path, class: "a-card-cta" %>
+      <%= link_to 'Ayuda', page_path('help'), style: "display:inline-block;margin:0 32px 0 0;padding:8px;vertical-align: middle;", class: "-link" %>
+      <%= link_to "Escribe algo bonito", new_letter_path, class: "a-button a-button--primary" %>
     </div>
   </div>
 </header>
@@ -26,15 +26,15 @@
   <div class="-form-wrapper">
     <div class="m-options-bar">
       <div class="m-options-bar__half">
-        <h2 class="" style="font-size:21px;color:white"><p>Vecinos que nos animan, transportistas, sanitarios, personal de supermercados, cuerpos de seguridad o personas que limpian el lugar por el que pasamos.</p><br><p>Dedica unas palabras a la gente que nos hace la cuarentena más llevadera y hace que no nos falte de nada.</p></h2>
-        <a class="a-button a-button--negative" style="margin-top: 32px;">Escribíles algo bonito</a>
+        <h2 class="" style="font-size:21px;"><p>Vecinos dj´s, transportistas, sanitarios, personal de supermercados, cuerpos de seguridad o personas que limpian el lugar por el que pasamos.</p><br><p>Muchas personas nos hacen que la cuarentena sea más llevadera y que no nos falte de nada.</p></h2>
+        <a class="a-button a-button--primary" style="margin-top: 32px; font-size: 16px">Dedícales unas palabras</a>
       </div>
       <div class="m-options-bar__half">
         <%= image_tag "2920052.png", class: "-home-image -desktop" %>
       </div>
     </div>
   </div>
-  <p style="margin:64px auto 0;font-size:14px;text-align: center;color:white">Lee los mensajes</p>
+  <p style="margin:64px auto 0;font-size:14px;text-align: center;">Lee los mensajes</p>
   <p class="-arrow-down"></p>
 </div>
 
@@ -57,6 +57,7 @@
     <% @letters.each do |letter| %>
       <li class="o-cards-list__item -collapsed">
         <div class="o-cards-list__head">
+          <p class="-strong">#<%= letter.id %></p>
           <p class="o-cards-list__head--title"><%= letter.title %></p>
           <p class="o-cards-list__head--name">
             <span> Por </span>
