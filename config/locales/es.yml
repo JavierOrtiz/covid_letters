@@ -10,3 +10,4 @@ es:
            one: 'una hora'
            other: '%{count} horas'
        less_than_x_minutes: 'menos de %{count} minutos'
+       x_days: '%{count} días'

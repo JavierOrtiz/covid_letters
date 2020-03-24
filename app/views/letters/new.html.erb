@@ -1,6 +1,9 @@
 <%= form_with(model: @letter, local: true, class: "-full -form-wrapper" ) do |form| %>
   <%= link_to "Volver", root_path, class: "-back-link" %>
   <fieldset>
+    <h2 class="o-cards-list__head o-cards-list__head--title">Escribe tu mensaje</h2>
+    <p class="-text">Escribe unas palabras de ánimo a alguien o cuenta algo bonito que te haya sucedido. Dedica unas palabras de ánimo o apoyo a quien crees que las necesita para demostrarles que estamos con ellos.</p>
+
     <% if @letter.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@letter.errors.count, "error") %> prohibited this letter from being saved:</h2>
@@ -17,13 +20,13 @@
     <%= form.text_field :title, class: "form-input", placeholder: "Pon a quien va dirigido o qué quieres contar" %>
 
     <%= form.label "Nombre" %>
-    <%= form.text_field :author_name, class: "form-input", placeholder: "Un nombre si quieras" %>
+    <%= form.text_field :author_name, class: "form-input", placeholder: "Tu nombre si quieras" %>
 
     <%= form.label "Ciudad" %>
     <%= form.text_field :author_city, class: "form-input", placeholder: "Si quieres que sepan desde dónde escribes" %>
 
-    <%= form.label "Escribe tu mensaje :)" %>
-    <%= form.text_area :body, class: "form-input", placeholder: " ", rows: "15" %>
+    <label>Escribe tu mensaje. No hay límte de texto.</label>
+    <%= form.text_area :body, class: "form-input", placeholder: "Recuerda que tu mensaje, por pequeño que sea, puede ayudar a mucha gente :)", rows: "15" %>
   </fieldset>
   <div class="m-options-bar">
     <div class="m-options-bar__half">
