@@ -1,16 +1,56 @@
-<header class="m-toolbar">
-  <%= link_to "Escribe algo bonito", new_letter_path, class: "a-card-cta" %>
+<header class="m-toolbar m-options-bar">
+  <div class="m-options-bar__half">
+    <h1 class="-logo">HéroesDelBarrio</h1>
+  </div>
+  <div class="m-options-bar__half" style="overflow: visible;">
+    <div id="submenu-list" class="-submenu -mobile">
+      <p id="submenu-trigger">Menu</p>
+      <ol id="submenu-target" class="-submenu-list">
+        <li id="close-submenu" style="margin-bottom:32px;font-weight: bold;">Cerrar</li>
+        <li style="border-bottom: 1px solid rgba(0,0,0,0.2);">
+          <a href="" class="">¿Tienes dudas o sugerencias?</a>
+        </li>
+        <li>
+          <a href="" class="">Dedica un mensaje</a>
+        </li>
+      </ol>
+    </div>
+    <div class="-desktop">
+      <a class="-link" style="display:inline-block;margin:0 32px 0 0;padding:8px;vertical-align: middle;">Ayuda</a>
+      <%= link_to "Escribe algo bonito", new_letter_path, class: "a-card-cta" %>
+    </div>
+  </div>
 </header>
+
+<div class="-fold">
+  <div class="-form-wrapper">
+    <div class="m-options-bar">
+      <div class="m-options-bar__half">
+        <h2 class="" style="font-size:21px;color:white"><p>Vecinos que nos animan, transportistas, sanitarios, personal de supermercados, cuerpos de seguridad o personas que limpian el lugar por el que pasamos.</p><br><p>Dedica unas palabras a la gente que nos hace la cuarentena más llevadera y hace que no nos falte de nada.</p></h2>
+        <a class="a-button a-button--negative" style="margin-top: 32px;">Escribíles algo bonito</a>
+      </div>
+      <div class="m-options-bar__half">
+        <%= image_tag "2920052.png", class: "-home-image -desktop" %>
+      </div>
+    </div>
+  </div>
+  <p style="margin:64px auto 0;font-size:14px;text-align: center;color:white">Lee los mensajes</p>
+  <p class="-arrow-down"></p>
+</div>
+
 <main id="main" class="o-wrapper">
-  <nav class="o-header">
+  <nav class="o-header m-options-bar">
     <%= form_tag root_path, method: :get, id: "searchForm" do %>
-      <%= label_tag :order, "Ordenar por: ", class: "a-sort-text" %>
-      <%= select_tag :order, options_for_select([["Más reciente primero", "desc"], ["Más antiguo primero", "asc"]], params.dig(:order)), include_blank: true, class: "a-sort", onchange: 'reload_filters()' %>
-
-
-      <%= text_field_tag :query, params.dig(:query), class: "a-search-input", placeholder: "Busca por palabras" %>
+      <div class="m-options-bar__half">
+        <%= select_tag :order, options_for_select([["Más reciente primero", "desc"], ["Más antiguo primero", "asc"]], params.dig(:order)), include_blank: "Ordenar por:", class: "a-sort", onchange: 'reload_filters()' %>
+      </div>
+      <div class="m-options-bar__half">
+        <div class="m-search-box">
+          <%= image_tag "ic-magnifying-glass.png", class: "m-search-box__icon" %>
+          <%= text_field_tag :query, params.dig(:query), class: "a-search-input", placeholder: "Busca por palabras" %>
+        </div>
+      </div>
     <% end %>
-
   </nav>
   <!--LETTERS LIST-->
   <ol class="o-cards-list">
@@ -38,4 +78,15 @@
       form = document.getElementById("searchForm");
       form.submit();
   }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#submenu-trigger").click(function(){
+            $("#submenu-target").addClass('-opened');
+        });
+        $("#close-submenu").click(function(){
+            $("#submenu-target").removeClass('-opened');
+        });
+    });
 </script>
