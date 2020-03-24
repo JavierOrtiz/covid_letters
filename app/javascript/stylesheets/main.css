@@ -477,6 +477,20 @@ label {
     color: #DC143C;
 }
 
+#error_explanation {
+    border-radius: 5px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: rgba(204, 0, 0, 0.2);
+    border:1px solid rgba(102, 0, 0, 0.5);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#error_explanation h2{
+    margin-bottom: 8px;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 820px) {
