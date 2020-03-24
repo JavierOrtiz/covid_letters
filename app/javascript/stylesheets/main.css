@@ -86,6 +86,12 @@ label {
     font-weight: bold;
 }
 
+
+.-strong {
+    font-weight: 700;
+    color: #666;
+}
+
 .form-input,
 .textarea {
     appearance: none;
@@ -115,23 +121,14 @@ label {
 /* TOOLBAR */
 
 .m-toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     overflow: visible;
     padding: 12px;
+    background-color: white;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
-}
-
-.a-card-cta  {
-    display: block;
-    float: right;
-    margin: 0 auto;
-    border-radius: 5px;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #DC143C;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
 }
 
 .a-send {
@@ -283,8 +280,9 @@ label {
 .-fold {
     overflow: hidden;
     box-sizing: border-box;
-    background-color: #DC143C;
+    background-color: #e8ebde;
     width: 100%;
+    margin-top: 50px;
     padding: 32px 0;
 }
 
@@ -440,7 +438,7 @@ label {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid #fff;
+    border-top: 10px solid #2c2c2c;
 }
 
 .-mobile {
