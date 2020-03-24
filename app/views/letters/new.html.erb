@@ -16,17 +16,19 @@
       </div>
     <% end %>
 
-    <%= form.label "Título" %>
+    <%= form.label "(*) Título" %>
     <%= form.text_field :title, class: "form-input", placeholder: "Pon a quien va dirigido o qué quieres contar" %>
 
     <%= form.label "Nombre" %>
+    <p style="margin-bottom:12px;font-size:14px;"> No es obligatorio, pero te ayudará a econtrar tus mensajes :)</p>
     <%= form.text_field :author_name, class: "form-input", placeholder: "Tu nombre si quieras" %>
 
     <%= form.label "Ciudad" %>
     <%= form.text_field :author_city, class: "form-input", placeholder: "Si quieres que sepan desde dónde escribes" %>
 
-    <label>Escribe tu mensaje. No hay límte de texto.</label>
+    <label>(*) Escribe tu mensaje. No hay límte de texto.</label>
     <%= form.text_area :body, class: "form-input", placeholder: "Recuerda que tu mensaje, por pequeño que sea, puede ayudar a mucha gente :)", rows: "15" %>
+    <p style="margin-bottom:12px;font-size:14px;">(*) Estos campos son obligatorios</p>
     <%= recaptcha_tags %>
   </fieldset>
   <div class="m-options-bar">
