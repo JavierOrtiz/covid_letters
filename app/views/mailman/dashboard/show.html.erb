@@ -1,6 +1,6 @@
 <div class="chart">
-  <%= line_chart (Letter.statuses.map do |status|
-    { name: status.first.capitalize, data: Letter.where(status: status).group_by_day(:created_at).count}
+  <%= line_chart (Letter.statuses.map do |status, key|
+    { name: status.capitalize, data: Letter.where(status: status).group_by_day(:created_at).count}
   end) << { name: "Total", data: Letter.group_by_day(:created_at).count} %>
 </div>
 
