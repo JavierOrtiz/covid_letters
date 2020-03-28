@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   namespace :mailman do
     root "dashboard#show"
+    resources :letters
   end
 end
