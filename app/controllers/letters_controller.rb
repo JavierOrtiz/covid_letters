@@ -3,9 +3,9 @@ class LettersController < ApplicationController
 
   def index
     if params[:query].present?
-      @letters = Letter.search(params[:query]).order(created_at:sort_method)
+      @letters = Letter.published.search(params[:query]).order(created_at:sort_method)
     else
-      @letters = Letter.all.order(created_at: sort_method)
+      @letters = Letter.published.order(created_at: sort_method)
     end
   end
 
