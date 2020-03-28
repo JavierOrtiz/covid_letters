@@ -1,3 +1,5 @@
 class Mailman < ApplicationRecord
-  devise :database_authenticatable
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :rememberable
 end
