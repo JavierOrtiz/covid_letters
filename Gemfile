@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "pg_search"
 gem 'high_voltage', '~> 3.1'
 gem "recaptcha"
+gem 'devise'
 
 
 group :development, :test do
