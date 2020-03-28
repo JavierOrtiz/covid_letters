@@ -19,7 +19,7 @@
         <td><%= letter.author_city %></td>
         <td><%= letter.status %></td>
         <td><%= letter.created_at.strftime("%d/%m/%Y") %></td>
-        <td><%= link_to "Revisar", mailman_letter_path(letter), class: "btn btn-xs btn-warning" %></td>
+        <td><%= link_to "Revisar", mailman_letter_path(letter), class: "btn btn-xs btn-info" %></td>
       </tr>
     <% end %>
     </tbody>
