@@ -17,7 +17,8 @@ gem "pg_search"
 gem 'high_voltage', '~> 3.1'
 gem "recaptcha"
 gem 'devise'
-
+gem "chartkick"
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

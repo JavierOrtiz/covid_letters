@@ -1,6 +1,6 @@
 class Mailman::DashboardController < Mailman::ApplicationController
 
   def show
-    @letters = Letter.pending
+    @letters = Letter.all
   end
 end
