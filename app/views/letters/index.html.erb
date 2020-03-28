@@ -17,25 +17,26 @@
     </div>
     <div class="-desktop">
       <%= link_to 'Ayuda', page_path('help'), style: "display:inline-block;margin:0 32px 0 0;padding:8px;vertical-align: middle;", class: "-link" %>
-      <%= link_to "Escribe algo bonito", new_letter_path, class: "a-button a-button--primary" %>
+      <%= link_to "Escribe un mensaje", new_letter_path, class: "a-button a-button--ghost" %>
     </div>
   </div>
 </header>
-
 <div class="-fold">
   <div class="-form-wrapper">
     <div class="m-options-bar">
       <div class="m-options-bar__half">
-        <h2 class="" style="font-size:21px;"><p>Vecinos dj´s, transportistas, sanitarios, personal de supermercados, cuerpos de seguridad o personas que limpian el lugar por el que pasamos.</p><br><p>Muchas personas nos hacen que la cuarentena sea más llevadera y que no nos falte de nada.</p></h2>
-        <a class="a-button a-button--primary" style="margin-top: 32px; font-size: 16px">Dedícales unas palabras</a>
+        <h2 class="" style="font-size:21px;"><p>Sanitarios, transportistas, vecinos que animan, personal de supermercados, de limpieza, los cuerpos de seguridad...</p><br><p>Muchas personas hacen que la cuarentena sea más llevadera y trabajan para que no nos falte de nada.</p></h2>
+        <a class="a-button a-button--primary" style="margin-top: 32px; font-size: 18px">Dedícales unas palabras</a>
       </div>
       <div class="m-options-bar__half">
-        <%= image_tag "2920052.png", class: "-home-image -desktop" %>
+        <%= image_tag "3594441.png", class: "-home-image -desktop" %>
       </div>
     </div>
   </div>
-  <p style="margin:64px auto 0;font-size:14px;text-align: center;">Lee los mensajes</p>
-  <p class="-arrow-down"></p>
+  <a class="-anchor" href="#main">
+    <p style="margin:64px auto 0;font-size:14px;text-align: center;">Lee los mensajes</p>
+    <%= image_tag "ic-angle-down.png", class: "-arrow-down" %>
+  </a>
 </div>
 
 <main id="main" class="o-wrapper">
