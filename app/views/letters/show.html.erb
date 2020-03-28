@@ -1,7 +1,14 @@
 <div class="o-cards-list -full -form-wrapper">
   <%= link_to 'Volver', letters_path, class: "-back-link" %>
+
   <div class="o-cards-list__head">
     <p class="o-cards-list__head--title"><%= @letter.title %></p>
+
+    <% if @letter.pending? %>
+      <p class="m-success-explanation">Este mensaje está todavía pendiente de moderación.</p>
+    <% end %>
+
+
     <p class="o-cards-list__head--name">
       <span> Por </span>
       <span> <%= @letter.author_name %> </span>

@@ -1,0 +1,33 @@
+<div class="chart">
+  <%= line_chart (Letter.statuses.map do |status|
+    { name: status.first.capitalize, data: Letter.where(status: status).group_by_day(:created_at).count}
+  end) << { name: "Total", data: Letter.group_by_day(:created_at).count} %>
+</div>
+
+<h2>Pendientes por revisar</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Ciudad</th>
+      <th>status</th>
+      <th>Creado</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @letters.pending.each do |letter| %>
+        <tr class="<%= 'table-warning' if letter.pending? %>">
+          <td><%= letter.title %></td>
+          <td><%= letter.author_name %></td>
+          <td><%= letter.author_city %></td>
+          <td><%= letter.status %></td>
+          <td><%= letter.created_at.strftime("%d/%m/%Y") %></td>
+          <td><%= link_to "Revisar", mailman_letter_path(letter), class: "btn btn-xs btn-warning" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -18,4 +18,6 @@ class Letter < ApplicationRecord
 
   validates :title,       presence: true, length: { maximum: 120 }
   validates :body,        presence: true
+
+  enum status: [:pending, :published, :rejected]
 end

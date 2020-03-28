@@ -1,0 +1,10 @@
+<h2><%= @letter.title %></h2>
+<p>Autor: <%= @letter.author_name %></p>
+<p>Ciudad: <%= @letter.author_city %></p>
+<p>Creado: <%= @letter.created_at.strftime("%d/%m/%Y") %></p>
+<h3>Contenido</h3>
+<p><%= @letter.body %></p>
+<% if @letter.pending? %>
+  <%= link_to "Aprobar", mailman_letter_path(status: "published"), method: :put, class: "btn btn-success" %>
+  <%= link_to "Rechazar", mailman_letter_path(status: "rejected"), method: :put, class: "btn btn-danger" %>
+<% end %>

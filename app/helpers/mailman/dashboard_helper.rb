@@ -1,0 +1,2 @@
+module Mailman::DashboardHelper
+end
