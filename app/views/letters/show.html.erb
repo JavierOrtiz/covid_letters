@@ -1,8 +1,10 @@
 <div class="o-cards-list -full -form-wrapper">
   <%= link_to 'Volver', letters_path, class: "-back-link" %>
-  <% if params[:notice] %>
-    <p class="m-success-explanation"><%= params[:notice] %>/p>
+
+  <% if notice %>
+    <p class="m-success-explanation"><%= notice %></p>
   <% end %>
+
   <div class="o-cards-list__head">
     <p class="o-cards-list__head--title"><%= @letter.title %></p>
     <p class="o-cards-list__head--name">
