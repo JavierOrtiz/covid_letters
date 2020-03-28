@@ -8,10 +8,10 @@
       <ol id="submenu-target" class="-submenu-list">
         <li id="close-submenu" style="margin-bottom:32px;font-weight: bold;">Cerrar</li>
         <li style="border-bottom: 1px solid rgba(0,0,0,0.2);">
-          <a href="" class="">¿Tienes dudas o sugerencias?</a>
+          <%= link_to '¿Tienes dudas o sugerencias?', page_path('help') %>
         </li>
         <li>
-          <a href="" class="">Dedica un mensaje</a>
+          <%= link_to "Dedica un mensaje", new_letter_path %>
         </li>
       </ol>
     </div>
@@ -26,7 +26,7 @@
     <div class="m-options-bar">
       <div class="m-options-bar__half">
         <h2 class="" style="font-size:21px;"><p>Sanitarios, transportistas, vecinos que animan, personal de supermercados, de limpieza, los cuerpos de seguridad...</p><br><p>Muchas personas hacen que la cuarentena sea más llevadera y trabajan para que no nos falte de nada.</p></h2>
-        <a class="a-button a-button--primary" style="margin-top: 32px; font-size: 18px">Dedícales unas palabras</a>
+        <%= link_to "Dedícales unas palabras", new_letter_path, class: "a-button a-button--primary", style: "margin-top: 32px; font-size: 18px" %>
       </div>
       <div class="m-options-bar__half">
         <%= image_tag "3594441.png", class: "-home-image -desktop" %>
